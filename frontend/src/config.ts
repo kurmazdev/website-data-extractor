@@ -1,0 +1,24 @@
+import type { Config } from "./types";
+export const demo: Config = {
+  url: "https://demo.website-extractor.test/catalog",
+  row_selector: ".book",
+  fields: [
+    { name: "Title", selector: "h2", attribute: "" },
+    { name: "Author", selector: ".author", attribute: "" },
+    { name: "Price", selector: ".price", attribute: "" },
+    { name: "Category", selector: ".category", attribute: "" },
+  ],
+  next_selector: "a.next",
+  max_pages: 3,
+  delay: 1,
+  timeout: 15,
+  render_js: false,
+  deduplicate: true,
+};
+export const blank: Config = {
+  ...demo,
+  url: "",
+  row_selector: "",
+  fields: [{ name: "Title", selector: "h2", attribute: "" }],
+  next_selector: "",
+};
